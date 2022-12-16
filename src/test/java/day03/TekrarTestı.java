@@ -10,7 +10,7 @@ import java.time.Duration;
 import java.util.Arrays;
 import java.util.List;
 
-public class TekarTestı {
+public class TekrarTestı {
     public static void main(String[] args) {
         /*
         a.web sayfasına gidin. https://www.amazon.com/
@@ -35,6 +35,7 @@ public class TekarTestı {
        String sonucYazisi=aramaSonuc.get(0).getText();
        String[] sonucYazisiElementi=sonucYazisi.split(" ");
         System.out.println("city bike arama sonucu : "+sonucYazisiElementi[2]);
+        System.out.println(Arrays.toString(sonucYazisiElementi));
         //sonuc sayisini LAMBDA ile yazdirin
         Arrays.stream(sonucYazisi.split(" ")).limit(3).skip(2).forEach(t-> System.out.println(t));
         //d. Sonra karşınıza çıkan ilk sonucun resmine tıklayın
@@ -42,6 +43,14 @@ public class TekarTestı {
         ilkResim.get(0).click();
         //sayfayi kapatin
         driver.close();
+
+
+
+
+
+
+
+
 
 
 
