@@ -26,7 +26,7 @@ public class xpath {
         //1- https://the-internet.herokuapp.com/add_remove_elements/ adresine gidin
         driver.get("https://the-internet.herokuapp.com/add_remove_elements/");
         //2- Add Element butonuna basin
-        driver.findElement(By.xpath("//button[@onclick='addElement()']")).click();
+        driver.findElement(By.xpath("//*[@onclick='addElement()']")).click();
         //3- Delete butonu’nun gorunur oldugunu test edin
         WebElement deleteButton=driver.findElement(By.xpath("//button[@class='added-manually']"));
         if (deleteButton.isDisplayed()){
@@ -46,6 +46,6 @@ public class xpath {
         }
 
         //sayfayi kapatin
-        driver.close();
+       // driver.close();
     }
 }
