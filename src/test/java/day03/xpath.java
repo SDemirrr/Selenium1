@@ -26,26 +26,33 @@ public class xpath {
         //1- https://the-internet.herokuapp.com/add_remove_elements/ adresine gidin
         driver.get("https://the-internet.herokuapp.com/add_remove_elements/");
         //2- Add Element butonuna basin
-        driver.findElement(By.xpath("//*[@onclick='addElement()']")).click();
+        driver.findElement(By.xpath("//button[@onclick='addElement()']")).click();
         //3- Delete butonu’nun gorunur oldugunu test edin
-        WebElement deleteButton=driver.findElement(By.xpath("//button[@class='added-manually']"));
+        WebElement deleteButton=driver.findElement(By.xpath("//*[@class='added-manually']"));
+        WebElement deleteButtonText=driver.findElement(By.xpath("//*[text()='Add Element']"));//xpath text ile locate alma
+        /*
+        Locate alirken sadece text() kullanaxaksak //*[text()='Add Element'] bu format kullanilir
+        Attribute kullanacaksak //*[@class='added-manually'] bu format kullanilir
+         */
+
         if (deleteButton.isDisplayed()){
-            System.out.println("Delete buton testi PASSED");
+            System.out.println("Delete Button Testi PASSED");
         }else {
-            System.out.println("Delete buton testi FAILED");
+            System.out.println("Delete Button Testi FAILED");
         }
+
         //4- Delete tusuna basin
         deleteButton.click();
-        //5- “Add/Remove Elements” yazisinin gorunur oldugunu test edin
-        WebElement addRemoveYazisi=driver.findElement(By.xpath("//h3[text()='Add/Remove Elements']"));
 
-        if (addRemoveYazisi.isDisplayed()){
-            System.out.println("Add/Remove Elements testi PASSED");
+        //5- “Add/Remove Elements” yazisinin gorunur oldugunu test edin
+        WebElement addRemoveElement=driver.findElement(By.xpath("//*[text()='Add/Remove Elements']"));
+        if (addRemoveElement.isDisplayed()){
+            System.out.println("Add/Remove Elements yazisi Testi PASSED");
         }else {
-            System.out.println("Add/Remove Elements testi FAILED");
+            System.out.println("Add/Remove Elements yazisi Testi FAILED");
         }
 
         //sayfayi kapatin
-       // driver.close();
+        driver.close();
     }
 }
